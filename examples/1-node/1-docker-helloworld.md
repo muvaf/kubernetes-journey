@@ -42,9 +42,15 @@ If an error comes up requiring sudo, add `alias docker="sudo docker"` to `~/.bas
 ## Run Example Bulletin Board
 
 ```console
-git clone https://github.com/dockersamples/node-bulletin-board
-cd node-bulletin-board/bulletin-board-app
+cd examples/1-node
 ```
+
+Run the app:
+```console
+npm install
+npm start
+```
+
 ```console
 docker build --tag bulletinboard:1.0 .
 ```
