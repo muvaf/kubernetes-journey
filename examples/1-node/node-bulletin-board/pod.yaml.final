@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bulletin
+spec:
+  containers:
+    - name: bulletin
+      image: bulletinboard:1.0
+      ports:
+        - name: web
+          containerPort: 8080
+          protocol: TCP
