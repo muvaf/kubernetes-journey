@@ -1,0 +1,8 @@
+FROM maven:3.6.3-openjdk-16-slim
+
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+RUN mvn package
+
+CMD ["java", "-jar", "target/app.war"]
+
