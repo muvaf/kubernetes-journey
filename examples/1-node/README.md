@@ -96,7 +96,7 @@ kind create cluster
 
 We will load our image into the cluster:
 ```console
-kind load docker-image bulletinboard:1.0
+kind load docker-image java-example:1.0
 ```
 
 Now we will run it in a `Pod`:
