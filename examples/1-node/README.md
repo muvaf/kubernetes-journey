@@ -43,7 +43,8 @@ Let's see if Docker has been installed correctly.
 sudo docker run hello-world
 ```
 
-If an error comes up requiring sudo, add `alias docker="sudo docker"` to `~/.bash_rc`
+> I'd recommend adding `alias docker="sudo docker"` to `~/.bash_rc` so that you don't need to
+type `sudo` for every Docker command
 
 ## Run Bulletin Board Directly
 
@@ -75,13 +76,13 @@ CMD [ "npm", "start" ]
 ```
 
 ```console
-docker build --tag bulletinboard:1.0 .
+sudo docker build --tag bulletinboard:1.0 .
 ```
 
 Now the image is ready!
 ```console
 # Inside port 8080 is published as 8000
-docker run --publish 8000:8080 --detach --name bb bulletinboard:1.0
+sudo docker run --publish 8000:8080 --detach --name bb bulletinboard:1.0
 ```
 
 Go visit localhost:8000 !
@@ -124,6 +125,6 @@ Go visit localhost:8000 !
 ### Cleanup
 
 ```console
-docker rm --force bb
+sudo docker rm --force bb
 kind delete clusters kind
 ```

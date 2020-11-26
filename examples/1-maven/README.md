@@ -1,4 +1,4 @@
-# Bulletin Board Example
+# Java Example
 
 ## Install Requirements
 
@@ -46,7 +46,8 @@ Let's see if Docker has been installed correctly.
 sudo docker run hello-world
 ```
 
-If an error comes up requiring sudo, add `alias docker="sudo docker"` to `~/.bash_rc`
+> I'd recommend adding `alias docker="sudo docker"` to `~/.bash_rc` so that you don't need to
+type `sudo` for every Docker command
 
 ## Run Example Directly
 
@@ -78,13 +79,13 @@ CMD ["java", "-jar", "target/app.war"]
 ```
 
 ```console
-docker build --tag java-example:1.0 .
+sudo docker build --tag java-example:1.0 .
 ```
 
 Now the image is ready!
 ```console
 # Inside port 8080 is published as 8000
-docker run --publish 8000:8080 --detach --name example-container java-example:1.0
+sudo docker run --publish 8000:8080 --detach --name example-container java-example:1.0
 ```
 
 Go visit http://localhost:8000/hello !
@@ -127,6 +128,6 @@ Go visit localhost:8000/hello !
 ### Cleanup
 
 ```console
-docker rm --force example-container
+sudo docker rm --force example-container
 kind delete clusters kind
 ```
