@@ -24,6 +24,8 @@ docker network ls
 docker network inspect bridge
 ```
 
+TODO: inspect template command not working in windows
+
 Let's get assigned IP of each container in that network:
 ```console
 docker inspect bb

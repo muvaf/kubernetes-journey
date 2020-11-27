@@ -46,8 +46,9 @@ Let's see if Docker has been installed correctly.
 sudo docker run hello-world
 ```
 
-> I'd recommend adding `alias docker="sudo docker"` to `~/.bash_rc` so that you don't need to
-type `sudo` for every Docker command
+```console
+usermod -aG sudo docker
+```
 
 ## Run Example Directly
 
