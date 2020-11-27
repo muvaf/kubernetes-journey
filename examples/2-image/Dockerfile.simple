@@ -1,0 +1,5 @@
+FROM alpine:3.12.1
+
+COPY run.sh run.sh
+
+CMD ["./run.sh"]
