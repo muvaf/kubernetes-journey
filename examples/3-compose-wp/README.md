@@ -18,6 +18,8 @@ WORDPRESS_DB_PASSWORD: wordpress
 WORDPRESS_DB_NAME: wordpress
 ```
 
+Wordpress exposes port `80`.
+
 ## Deploy without a Volume
 
 Write a `docker-compose.stateless.yaml` to deploy a Wordpress without a volume.
