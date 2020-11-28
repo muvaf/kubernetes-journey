@@ -40,14 +40,18 @@ Install Kubectl client: https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
 ## First Run
 
-Let's see if Docker has been installed correctly.
-
-```console
-sudo docker run hello-world
-```
+Docker user needs to be root.
 
 ```console
 usermod -aG sudo docker
+```
+
+
+Let's see if Docker has been installed correctly.
+
+
+```console
+docker run hello-world
 ```
 
 ## Run Example Directly
@@ -80,13 +84,13 @@ CMD ["java", "-jar", "target/app.war"]
 ```
 
 ```console
-sudo docker build --tag java-example:1.0 .
+docker build --tag java-example:1.0 .
 ```
 
 Now the image is ready!
 ```console
 # Inside port 8080 is published as 8000
-sudo docker run --publish 8000:8080 --detach --name example-container java-example:1.0
+docker run --publish 8000:8080 --detach --name example-container java-example:1.0
 ```
 
 Go visit http://localhost:8000/hello !
@@ -129,6 +133,6 @@ Go visit localhost:8000/hello !
 ### Cleanup
 
 ```console
-sudo docker rm --force example-container
+docker rm --force example-container
 kind delete clusters kind
 ```

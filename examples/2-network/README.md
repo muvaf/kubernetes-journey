@@ -7,15 +7,15 @@ Docker can create software defined networks for you in your computer. It essenti
 When we run something with `docker run`, it starts in the default bridge network.
 
 ```console
-sudo docker run --publish 8000:8080 --detach --name bb bulletinboard:1.0
-sudo docker run --publish 8000:8080 --detach --name jv java-example:1.0
+docker run --publish 8000:8080 --detach --name bb bulletinboard:1.0
+docker run --publish 8000:8080 --detach --name jv java-example:1.0
 ```
 
 > You should see an error about ports conflicting since they are on the same network, trying to use the same port.
 
 ```console
-sudo docker rm --force jv
-sudo docker run --publish 2000:8080 --detach --name jv java-example:1.0
+docker rm --force jv
+docker run --publish 2000:8080 --detach --name jv java-example:1.0
 ```
 
 Let's see how the network looks like:
@@ -59,13 +59,13 @@ docker network inspect mybridge
 
 Let's add containers to our bridge!
 ```console
-sudo docker run --publish 8000:8080 --detach --net=mybridge --name bb bulletinboard:1.0
-sudo docker run --publish 2000:8080 --detach --net=mybridge --name jv java-example:1.0
+docker run --publish 8000:8080 --detach --net=mybridge --name bb bulletinboard:1.0
+docker run --publish 2000:8080 --detach --net=mybridge --name jv java-example:1.0
 ```
 
 Another one in the default network:
 ```console
-sudo docker run --publish 3000:8080 --detach --name jv-default java-example:1.0
+docker run --publish 3000:8080 --detach --name jv-default java-example:1.0
 ```
 
 ```console
@@ -99,7 +99,7 @@ ping jv-default
 
 Cleanup:
 ```console
-sudo docker rm --force jv jv-default bb
+docker rm --force jv jv-default bb
 ```
 
 ## Host Network

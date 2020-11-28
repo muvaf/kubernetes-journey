@@ -37,14 +37,17 @@ Install Kubectl client: https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
 ## First Run
 
+Docker user needs to be root.
+
+```console
+usermod -aG sudo docker
+```
+
 Let's see if Docker has been installed correctly.
 
 ```console
-sudo docker run hello-world
+docker run hello-world
 ```
-
-> I'd recommend adding `alias docker="sudo docker"` to `~/.bash_rc` so that you don't need to
-type `sudo` for every Docker command
 
 ## Run Bulletin Board Directly
 
@@ -76,13 +79,13 @@ CMD [ "npm", "start" ]
 ```
 
 ```console
-sudo docker build --tag bulletinboard:1.0 .
+docker build --tag bulletinboard:1.0 .
 ```
 
 Now the image is ready!
 ```console
 # Inside port 8080 is published as 8000
-sudo docker run --publish 8000:8080 --detach --name bb bulletinboard:1.0
+docker run --publish 8000:8080 --detach --name bb bulletinboard:1.0
 ```
 
 Go visit localhost:8000 !
@@ -125,6 +128,6 @@ Go visit localhost:8000 !
 ### Cleanup
 
 ```console
-sudo docker rm --force bb
+docker rm --force bb
 kind delete clusters kind
 ```
