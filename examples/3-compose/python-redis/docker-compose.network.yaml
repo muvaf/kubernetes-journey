@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  web:
+    environment:
+      FLASK_ENV: development
+    build: .
+    ports:
+      - "8080:5000"
+    networks:
+      - first
+  redis:
+    image: "redis:alpine"
+    networks:
+      - first
+  web2:
+    environment:
+      REDIS_URL: redis2
+    build: .
+    ports:
+      - "8081:5000"
+    networks:
+      - second
+  redis2:
+    image: "redis:alpine"
+    networks:
+      - second
+networks:
+  first:
+    driver: bridge
+  second:
+    driver: bridge
