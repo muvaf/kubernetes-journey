@@ -2,20 +2,20 @@
 
 MySQL image ( `mysql:5.7` ) expects the following env vars:
 ```
-MYSQL_ROOT_PASSWORD: somewordpress
-MYSQL_DATABASE: wordpress
-MYSQL_USER: wordpress
-MYSQL_PASSWORD: wordpress
+MYSQL_ROOT_PASSWORD=somewordpress
+MYSQL_DATABASE=wordpress
+MYSQL_USER=wordpress
+MYSQL_PASSWORD=wordpress
 ```
 
 By default it uses `/var/lib/mysql` path as data store.
 
 Wordpress image  ( `wordpress:latest` ) expects the following env vars:
 ```
-WORDPRESS_DB_HOST: db:3306
-WORDPRESS_DB_USER: wordpress
-WORDPRESS_DB_PASSWORD: wordpress
-WORDPRESS_DB_NAME: wordpress
+WORDPRESS_DB_HOST=<CHANGE WITH MYSQL CONTAINER NAME>:3306
+WORDPRESS_DB_USER=wordpress
+WORDPRESS_DB_PASSWORD=wordpress
+WORDPRESS_DB_NAME=wordpress
 ```
 
 Wordpress exposes port `80`.

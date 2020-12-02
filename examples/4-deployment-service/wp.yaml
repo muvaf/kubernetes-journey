@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wp
+  template:
+    metadata:
+      labels:
+        app: wp
+    spec:
+      containers:
+        - name: wordpress
+          image: wordpress:5.5.3
+          env:
+          - name: WORDPRESS_DB_HOST
+            value: "mysql:3306" # like 10.2.0.1:3306
+          - name: WORDPRESS_DB_NAME
+            value: "somewordpress"
+          - name: WORDPRESS_DB_USER
+            value: "somewordpress"
+          - name: WORDPRESS_DB_PASSWORD
+            value: "somewordpress"
+          ports:
+            - name: wp
+              containerPort: 80
+              protocol: TCP

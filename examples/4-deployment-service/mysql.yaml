@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: server
+          image: mysql:5.7
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: "somewordpress"
+          - name: MYSQL_DATABASE
+            value: "somewordpress"
+          - name: MYSQL_USER
+            value: "somewordpress"
+          - name: MYSQL_PASSWORD
+            value: "somewordpress"
+          ports:
+            - name: mysql
+              containerPort: 3306
+              protocol: TCP
