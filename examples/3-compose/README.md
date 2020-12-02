@@ -5,12 +5,13 @@
 The application code lives in `app.py`:
 ```python
 import time
+import os
 
 import redis
 from flask import Flask
 
 app = Flask(__name__)
-cache = redis.Redis(host='redis', port=6379)
+cache = redis.Redis(host=os.getenv("REDIS_URL", "redis"), port=6379)
 
 def get_hit_count():
     retries = 5
@@ -27,6 +28,7 @@ def get_hit_count():
 def hello():
     count = get_hit_count()
     return 'Hello World! I have been seen {} times.\n'.format(count)
+
 ```
 
 Dependencies of this program are in `requirements.txt`:
