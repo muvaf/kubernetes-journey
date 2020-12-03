@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: reader-1
+spec:
+  containers:
+    - name: reader
+      image: reader:1.0
+      env:
+      - name: ENVVAR1
+        valueFrom:
+          configMapKeyRef:
+            name: myconfig
+            key: enableAwesomeFeature
+      - name: ENVVAR2
+        valueFrom:
+          configMapKeyRef:
+            name: myconfig
+            key: numberOfPlayers
