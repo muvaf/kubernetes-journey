@@ -7,3 +7,6 @@ nodes:
     hostPort: 30067
     listenAddress: "127.0.0.1"
     protocol: TCP
+  extraMounts:
+  - hostPath: /tmp/kind-cluster-host-data
+    containerPath: /tmp/kind-cluster-host-data

@@ -17,7 +17,7 @@ spec:
           image: wordpress:5.5.3
           env:
           - name: WORDPRESS_DB_HOST
-            value: "mysql:3306" # like 10.2.0.1:3306
+            value: "<MySQL Pod IP Here>:3306" # like 10.2.0.1:3306
           - name: WORDPRESS_DB_NAME
             value: "somewordpress"
           - name: WORDPRESS_DB_USER
