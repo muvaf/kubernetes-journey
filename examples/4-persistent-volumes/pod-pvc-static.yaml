@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-example
+spec:
+  containers:
+  - image: alpine:latest
+    name: bb
+    command:
+    - sleep
+    - "10000"
+    volumeMounts:
+    - mountPath: /var/lib/mysql
+      name: test-volume
+  volumes:
+  - name: test-volume
+    persistentVolumeClaim:
+      claimName: another-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: another-pvc
+spec:
+  accessModes:
+      - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeMode: Filesystem
+  volumeName: some-pv
