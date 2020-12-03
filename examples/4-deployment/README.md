@@ -11,6 +11,7 @@ docker pull mysql:5.7
 kind load docker-image mysql:5.7
 docker pull wordpress:5.5.3
 kind load docker-image wordpress:5.5.3
+kind load docker-image bulletinboard:1.0
 ```
 
 ## Simple
