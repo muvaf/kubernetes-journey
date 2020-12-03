@@ -1,0 +1,7 @@
+FROM alpine:latest
+
+COPY success.sh success.sh
+
+RUN chmod +x success.sh
+
+CMD ["./success.sh"]

@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pi-3
+spec:
+  template:
+    spec:
+      containers:
+      - name: phases
+        image: success:1.0
+      restartPolicy: Never
+  backoffLimit: 4
+  completion: 3

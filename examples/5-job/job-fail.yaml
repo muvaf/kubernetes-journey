@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pi-2
+spec:
+  template:
+    spec:
+      containers:
+      - name: phases
+        image: fail:1.0
+      restartPolicy: Never
+  backoffLimit: 4
