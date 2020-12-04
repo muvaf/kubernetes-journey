@@ -137,23 +137,3 @@ spec:
 ```
 
 Go visit `https://localhost/apple`
-
-# Namespace
-
-Run `kubectl get namespace`.
-
-We can create a namespace with:
-```
-kubectl create namespace customer-1
-```
-
-Then we can make our queries specific to that namespace:
-```
-kubectl get pods -n customer-1
-kubectl get pods -n kube-system
-```
-
-Switch default namespace to something other than `default`:
-```
-kubectl config set-context --current --namespace=customer-1
-```
