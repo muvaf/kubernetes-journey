@@ -97,7 +97,7 @@ spec:
     - name: reader
       image: reader:2.0
       command:
-      - "reader.sh"
+      - "./reader.sh"
       - "$(ENVVAR1)"
       - "$(ENVVAR2)"
       env:
