@@ -178,7 +178,7 @@ kubectl delete configmap --all
 Several ways to create a secret.
 
 ```
-kubectl create secret generic mysecret --from-literal=username=root --form-literal=password=pass123
+kubectl create secret generic mysecret --from-literal=username=root --from-literal=password=pass123
 kubectl describe secret mysecret
 kubectl get secret mysecret -o yaml
 ```
