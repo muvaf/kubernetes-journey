@@ -1,5 +1,10 @@
 # Job
 
+Create cluster with the following command:
+```
+kind create cluster --config=kind-config.yaml
+```
+
 ## Successful Job
 
 Let's write a script that will complete successfully.
