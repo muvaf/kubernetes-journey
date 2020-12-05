@@ -578,7 +578,7 @@ spec:
           customer-id: "1"
     - podSelector:
         matchLabels:
-          role: wp
+          app: wp
     ports:
     - protocol: TCP
       port: 3306
