@@ -137,6 +137,12 @@ data:
 
 This will assign a new IP in the network for all `LoadBalancer` type `Service`s. Then in the router, we can map public ports to that IP address.
 
+### Install Storage Provisioner
+
+In order to get `PersistentVolume`s to work, we need to install a storage provisioner. Using Rook + Ceph is a good option https://rook.io/docs/rook/v1.5/ceph-quickstart.html
+
+We will not do it now in the home cluster since it requires unformatted storage drives.
+
 ### Install Dashboard (optional)
 
 We can install it via:
