@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubectl-pod-2
+spec:
+  serviceAccountName: muvaffak
+  containers:
+  - name: main
+    image: bitnami/kubectl:1.19.4
+    command:
+    - "sleep"
+    - "10000"

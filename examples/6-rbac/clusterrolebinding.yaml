@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: read-nodes
+subjects: # we can bind it to multiple subjects.
+- kind: ServiceAccount
+  name: muvaffak
+  namespace: default # need to give namespace since this is cluster-scoped object.
+roleRef:
+  kind: ClusterRole
+  name: node-reader
+  apiGroup: rbac.authorization.k8s.io
