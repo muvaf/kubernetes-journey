@@ -308,7 +308,7 @@ metadata:
 spec:
   containers:
   - name: quota-mem-cpu-demo-ctr
-    image: nginx
+    image: alpine
     resources:
       limits:
         memory: "800Mi"
