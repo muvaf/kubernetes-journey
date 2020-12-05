@@ -22,6 +22,12 @@ kubectl config set-context --current --namespace=customer-1
 
 ## CPU Limits & Requests
 
+
+In kind, metrics-server is not installed by default:
+```
+kubectl apply -f https://gist.githubusercontent.com/hjacobs/69b6844ba8442fcbc2007da316499eb4/raw/5b8678ac5e11d6be45aa98ca40d17da70dcb974f/kind-metrics-server.yaml
+```
+
 Let's create a `Pod` whose container will try to use 2 CPUs while its limit is 1.
 
 Create `pod-cpu.yaml`:
