@@ -309,6 +309,9 @@ spec:
   containers:
   - name: quota-mem-cpu-demo-ctr
     image: alpine
+    command:
+    - "sleep"
+    - "10000"
     resources:
       limits:
         memory: "800Mi"
