@@ -1,5 +1,10 @@
 # Job
 
+Create cluster with the following command:
+```
+kind create cluster --config=kind-config.yaml
+```
+
 ## Successful Job
 
 Let's write a script that will complete successfully.
@@ -129,7 +134,7 @@ spec:
         image: success:1.0
       restartPolicy: Never
   backoffLimit: 4
-  completion: 3
+  completions: 3
 ```
 
 Run `kubectl apply -f job-completion.yaml`

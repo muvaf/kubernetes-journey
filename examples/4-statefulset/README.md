@@ -10,6 +10,7 @@ metadata:
   name: mysql
 spec:
   replicas: 1
+  serviceName: mysql
   selector:
     matchLabels:
       app: mysql
