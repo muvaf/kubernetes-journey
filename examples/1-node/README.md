@@ -40,7 +40,7 @@ Install Kubectl client: https://kubernetes.io/docs/tasks/tools/install-kubectl/
 Docker user needs to be root.
 
 ```console
-usermod -aG sudo docker
+sudo usermod -aG docker $USER && newgrp docker
 ```
 
 Let's see if Docker has been installed correctly.
